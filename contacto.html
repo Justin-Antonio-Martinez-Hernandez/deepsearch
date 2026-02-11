@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Search | Contáctenos</title>
+
+<style>
+
+/* ===== RESET ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+body{
+background:#0a0f1c;
+color:white;
+}
+
+/* ===== HEADER ===== */
+
+header{
+background:rgba(10,20,40,0.95);
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #1e3a5f;
+position:sticky;
+top:0;
+}
+
+.logo-header{
+font-size:28px;
+font-weight:bold;
+color:#4da6ff;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#4da6ff;
+}
+
+/* ===== MAIN ===== */
+
+.container{
+max-width:600px;
+margin:auto;
+padding:60px 30px;
+text-align:center;
+}
+
+.container h1{
+color:#4da6ff;
+margin-bottom:10px;
+}
+
+.container p{
+color:#aaa;
+margin-bottom:30px;
+}
+
+/* ===== FORM ===== */
+
+input{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:none;
+border-radius:8px;
+font-size:16px;
+background:#111a2e;
+color:white;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:8px;
+background:#4da6ff;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#0077ff;
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+
+.success{
+margin-top:20px;
+color:#4da6ff;
+display:none;
+font-weight:bold;
+animation:fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+background:#050a14;
+padding:20px;
+text-align:center;
+color:#888;
+margin-top:50px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<div class="logo-header">Deep Search</div>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="noticias.html">Noticias</a>
+<a href="contacto.html">Contáctenos</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<h1>Suscríbete a Deep Search</h1>
+
+<p>
+Ingresa tu correo electrónico para recibir noticias, investigaciones
+y actualizaciones exclusivas.
+</p>
+
+<form onsubmit="suscribir(event)">
+
+<input 
+type="email" 
+id="correo" 
+placeholder="Ingresa tu correo electrónico"
+required
+>
+
+<button type="submit">
+Suscribirse
+</button>
+
+</form>
+
+<div class="success" id="mensaje">
+
+Gracias por suscribirte a Deep Search.  
+Recibirás nuestras noticias pronto.
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Deep Search  
+deepsearchnoticias@gmail.com  
+
+</footer>
+
+<script>
+
+function suscribir(event){
+
+event.preventDefault();
+
+const correo = document.getElementById("correo").value;
+
+if(correo !== ""){
+
+document.getElementById("mensaje").style.display = "block";
+
+document.getElementById("correo").value = "";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
