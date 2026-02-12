@@ -8,7 +8,7 @@ const emailJsConfig = {
 
     template_id: 'template_a6qb2tb',
 
-    public_key: 'yTowpQuz0iMmDl3'
+    public_key: 'WHqOPUlHcTTxGIlHt'
 
 };
 
