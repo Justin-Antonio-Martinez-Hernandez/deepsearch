@@ -2,79 +2,186 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Informe ODS 2025 | El Abismo</title>
 
-<style>
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
+<style>
 body{
-margin:0;
-font-family:Arial;
-background:#0b1220;
-color:white;
+  margin:0;
+  font-family:'Roboto', sans-serif;
+  background:#0b1220;
+  color:white;
+  overflow-x:hidden;
+  line-height:1.7;
 }
 
+/* HEADER / HERO */
 .hero{
-height:400px;
-background:url("https://images.unsplash.com/photo-1466611653911-95081537e5b7") center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
+  height:450px;
+  background:url("https://images.unsplash.com/photo-1466611653911-95081537e5b7") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
 }
 
 .hero h1{
-background:black;
-padding:20px;
+  background:rgba(0,0,0,0.8);
+  padding:25px 40px;
+  font-family:'Montserrat', sans-serif;
+  font-size:36px;
+  border-radius:10px;
+  text-align:center;
+  opacity:0;
+  animation:fadeIn 2s forwards;
 }
 
+/* CONTENT */
 .content{
-padding:40px;
-max-width:1000px;
-margin:auto;
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
 }
 
+/* CARDS */
 .card{
-background:#111a2e;
-padding:20px;
-margin:20px 0;
-border-radius:10px;
-transition:0.4s;
+  background:#111a2e;
+  padding:25px;
+  margin:20px 0;
+  border-radius:10px;
+  transition:0.4s, transform 0.4s;
+  opacity:0;
+  transform:translateY(40px);
 }
 
 .card:hover{
-transform:translateY(-5px);
+  transform:translateY(-5px);
+  background:#1a2035;
 }
 
+/* IMAGES */
+.card img{
+  width:100%;
+  border-radius:10px;
+  margin-top:15px;
+  transition:0.5s;
+}
+
+.card img:hover{
+  transform:scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* BUTTON */
+.btn{
+  background:#4da6ff;
+  padding:12px 25px;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+  display:inline-block;
+  margin:30px 0;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#1b6ed6;
+  transform:translateY(-3px);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+  border-top:1px solid #1e3a5f;
+  margin-top:50px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+  to {opacity:1;}
+}
 </style>
 </head>
 
 <body>
 
 <div class="hero">
-<h1>Informe ODS 2025 alerta retrasos</h1>
+  <h1>Informe ODS 2025 alerta retrasos en energía</h1>
 </div>
 
 <div class="content">
 
+<!-- CARD 1 -->
 <div class="card">
-<p>
-El informe revela que el progreso energético mundial es insuficiente
-para cumplir las metas del 2030.
-</p>
+  <h2>Progreso global insuficiente</h2>
+  <p>
+    Según la ONU, el avance hacia el acceso universal a la energía limpia y moderna sigue siendo lento. 
+    Más de 660 millones de personas aún carecen de electricidad, especialmente en África Subsahariana y zonas rurales aisladas.
+  </p>
+  <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" alt="Electricidad mundial">
 </div>
 
+<!-- CARD 2 -->
 <div class="card">
-<p>
-Más de 660 millones de personas siguen sin acceso a electricidad.
-</p>
+  <h2>Inversión en energías limpias</h2>
+  <p>
+    Se requiere triplicar la inversión global en energías renovables y eficiencia energética para alcanzar las metas del ODS 7 antes de 2030.
+  </p>
+  <p>
+    Actualmente, los flujos financieros internacionales para energía limpia en países en desarrollo alcanzan aproximadamente 21,6 mil millones de dólares al año.
+  </p>
+  <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2" alt="Proyectos de energía renovable">
 </div>
 
+<!-- CARD 3 -->
 <div class="card">
-<p>
-Se requiere triplicar la inversión en energías limpias.
-</p>
+  <h2>Cocinas limpias y salud</h2>
+  <p>
+    Aproximadamente el 74% de la población mundial tiene acceso a tecnologías de cocina limpia, lo que reduce enfermedades respiratorias y contaminación en los hogares.
+  </p>
+  <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea" alt="Cocina limpia">
 </div>
 
+<!-- CARD 4 -->
+<div class="card">
+  <h2>Objetivos clave del ODS 7</h2>
+  <ul>
+    <li>Garantizar acceso universal a electricidad y cocinas limpias.</li>
+    <li>Incrementar el uso de energías renovables.</li>
+    <li>Mejorar la eficiencia energética global.</li>
+    <li>Fortalecer la cooperación internacional y financiamiento para países en desarrollo.</li>
+  </ul>
+  <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1" alt="Energía renovable">
 </div>
+
+<!-- BOTÓN VOLVER -->
+<a href="noticias.html" class="btn">← Volver a Noticias</a>
+
+</div>
+
+<footer>
+© 2026 EL ABISMO | Periodismo de investigación energética
+</footer>
+
+<script>
+// ANIMACIÓN SCROLL
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+  const scrollLimit = window.pageYOffset + window.innerHeight - 50;
+  cards.forEach(card => {
+    if(scrollLimit > card.offsetTop){
+      card.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
