@@ -7,7 +7,6 @@
 
 <style>
 
-/* ===== RESET ===== */
 *{
 margin:0;
 padding:0;
@@ -20,18 +19,15 @@ background:#0a0f1c;
 color:white;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 
 header{
-background:rgba(10,20,40,0.95);
+background:#081427;
 padding:15px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 border-bottom:1px solid #1e3a5f;
-position:sticky;
-top:0;
-z-index:1000;
 }
 
 .logo-header{
@@ -44,40 +40,33 @@ nav a{
 margin:0 15px;
 text-decoration:none;
 color:white;
-font-weight:500;
-transition:0.3s;
 }
 
 nav a:hover{
 color:#4da6ff;
 }
 
-/* ===== TITLE ===== */
+/* TITLE */
 
 .title-section{
-padding:60px 40px 30px 40px;
+padding:40px;
 text-align:center;
 }
 
 .title-section h1{
-font-size:40px;
+font-size:42px;
 color:#4da6ff;
-margin-bottom:10px;
 }
 
-.title-section p{
-color:#aaa;
-}
-
-/* ===== NEWS CONTAINER ===== */
+/* CONTAINER */
 
 .container{
-padding:30px 40px;
 max-width:1000px;
 margin:auto;
+padding:20px;
 }
 
-/* ===== CATEGORY ===== */
+/* CATEGORY */
 
 .category{
 margin-bottom:50px;
@@ -90,31 +79,40 @@ margin-bottom:20px;
 color:#4da6ff;
 }
 
-/* ===== CARD ===== */
+/* CARD */
+
+.news-link{
+text-decoration:none;
+color:white;
+}
 
 .news-card{
 background:#111a2e;
 padding:20px;
-margin-bottom:15px;
+margin-bottom:20px;
 border-radius:10px;
-cursor:pointer;
 transition:0.3s;
-border:1px solid transparent;
 }
 
 .news-card:hover{
 background:#162544;
-border:1px solid #4da6ff;
 transform:scale(1.02);
 }
 
+.news-image{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:15px;
+}
+
 .news-title{
-font-size:20px;
+font-size:22px;
 margin-bottom:5px;
 }
 
 .news-date{
-font-size:14px;
 color:#888;
 margin-bottom:10px;
 }
@@ -123,26 +121,14 @@ margin-bottom:10px;
 color:#bbb;
 }
 
-.news-content{
-max-height:0;
-overflow:hidden;
-transition:max-height 0.5s ease;
-margin-top:10px;
-color:#ccc;
-}
-
-.news-content.show{
-max-height:500px;
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 
 footer{
 background:#050a14;
 padding:20px;
 text-align:center;
 color:#888;
-margin-top:50px;
+margin-top:40px;
 }
 
 </style>
@@ -152,25 +138,51 @@ margin-top:50px;
 
 <header>
 
-<div class="logo-header">Deep Search</div>
+<div class="logo-header">EL ABISMO</div>
 
 <nav>
 <a href="index.html">Inicio</a>
 <a href="noticias.html">Noticias</a>
-<a href="contacto.html">Contáctenos</a>
 </nav>
 
 </header>
 
 <section class="title-section">
 
-<h1>Noticias</h1>
-
-<p>Investigación profunda. Información verificada.</p>
+<h1>Noticias ODS 7</h1>
+<p>Energía, sostenibilidad y desarrollo global</p>
 
 </section>
 
 <div class="container">
+
+<!-- PRINCIPAL -->
+
+<div class="category">
+
+<h2>Principal</h2>
+
+<a href="noticia_ods7.html" class="news-link">
+<div class="news-card">
+
+<img src="img/energia.jpg" class="news-image">
+
+<div class="news-title">
+Más de 660 millones viven sin electricidad
+</div>
+
+<div class="news-date">
+20 mayo 2025
+</div>
+
+<div class="news-preview">
+La ONU advierte que el progreso energético global es insuficiente.
+</div>
+
+</div>
+</a>
+
+</div>
 
 <!-- INTERNACIONAL -->
 
@@ -178,106 +190,73 @@ margin-top:50px;
 
 <h2>Internacional</h2>
 
-<div class="news-card" onclick="toggle(this)">
+<a href="noticia_cocina.html" class="news-link">
+<div class="news-card">
+
+<img src="img/cocina.jpg" class="news-image">
 
 <div class="news-title">
-Nueva investigación climática global
+74% del mundo tiene acceso a cocina limpia
 </div>
 
 <div class="news-date">
-11 febrero 2026
+14 julio 2025
 </div>
 
 <div class="news-preview">
-Científicos confirman nuevos hallazgos importantes.
-</div>
-
-<div class="news-content">
-
-Los investigadores analizaron múltiples fuentes internacionales,
-confirmando datos que podrían cambiar la comprensión actual del clima global.
-Este análisis tomó años de recopilación de información.
-
+Aún millones dependen de combustibles contaminantes.
 </div>
 
 </div>
+</a>
 
-<div class="news-card" onclick="toggle(this)">
+<a href="noticia_renovable.html" class="news-link">
+<div class="news-card">
+
+<img src="img/renovable.jpg" class="news-image">
 
 <div class="news-title">
-Descubrimiento arqueológico histórico
+Energías renovables siguen creciendo
 </div>
 
 <div class="news-date">
-10 febrero 2026
+2025
 </div>
 
 <div class="news-preview">
-Una estructura antigua fue encontrada recientemente.
-</div>
-
-<div class="news-content">
-
-Expertos confirmaron la autenticidad del hallazgo mediante pruebas
-científicas rigurosas y análisis comparativos con registros históricos.
-
+La transición energética avanza globalmente.
 </div>
 
 </div>
+</a>
 
 </div>
 
-<!-- NACIONAL -->
+<!-- ARTICULOS -->
 
 <div class="category">
 
-<h2>Nacional</h2>
+<h2>Artículos</h2>
 
-<div class="news-card" onclick="toggle(this)">
+<a href="articulo_energia.html" class="news-link">
+<div class="news-card">
+
+<img src="img/solar.jpg" class="news-image">
 
 <div class="news-title">
-Nueva política energética nacional
+Energía limpia: clave para salvar el planeta
 </div>
 
 <div class="news-date">
-9 febrero 2026
+Artículo especial
 </div>
 
 <div class="news-preview">
-Autoridades anuncian cambios importantes.
-</div>
-
-<div class="news-content">
-
-La decisión fue tomada después de un análisis profundo
-de datos energéticos y necesidades nacionales actuales.
-
+Las energías renovables son fundamentales para el futuro.
 </div>
 
 </div>
-
-<div class="news-card" onclick="toggle(this)">
-
-<div class="news-title">
-Avances científicos en investigación nacional
-</div>
-
-<div class="news-date">
-8 febrero 2026
-</div>
-
-<div class="news-preview">
-Investigadores logran nuevos avances.
-</div>
-
-<div class="news-content">
-
-Este descubrimiento podría tener impacto significativo
-en el desarrollo tecnológico futuro.
-
-</div>
-
-</div>
+</a>
 
 </div>
 
@@ -285,22 +264,9 @@ en el desarrollo tecnológico futuro.
 
 <footer>
 
-© 2026 Deep Search  
-deepsearchnoticias@gmail.com  
+© 2026 EL ABISMO
 
 </footer>
-
-<script>
-
-function toggle(card){
-
-const content = card.querySelector(".news-content");
-
-content.classList.toggle("show");
-
-}
-
-</script>
 
 </body>
 </html>
