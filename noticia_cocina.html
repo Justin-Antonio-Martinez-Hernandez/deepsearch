@@ -2,120 +2,190 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cocina limpia avanza | El Abismo</title>
 
-<style>
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-body{
-margin:0;
-font-family:Segoe UI;
-background:linear-gradient(120deg,#0a0f1c,#13203a);
-color:white;
+<style>
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Roboto', sans-serif;
 }
 
+body{
+  background:linear-gradient(120deg,#0a0f1c,#13203a);
+  color:white;
+  overflow-x:hidden;
+  line-height:1.7;
+}
+
+/* ===== HEADER ===== */
 header{
-padding:20px;
-background:#00000055;
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
+  padding:20px 40px;
+  background:#00000055;
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  animation:slideDown 1s ease-out;
 }
 
 .logo{
-color:#4da6ff;
-font-size:26px;
-font-weight:bold;
+  color:#4da6ff;
+  font-size:26px;
+  font-weight:bold;
+  letter-spacing:1px;
 }
 
+/* ===== HERO ===== */
 .hero{
-height:400px;
-background:url("https://images.unsplash.com/photo-1581578731548-c64695cc6952") center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
+  height:400px;
+  background:url("https://images.unsplash.com/photo-1581578731548-c64695cc6952") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
 }
 
 .hero h1{
-background:#000000aa;
-padding:20px;
-border-radius:10px;
-animation:fadeIn 2s;
+  background:#000000aa;
+  padding:20px 30px;
+  border-radius:10px;
+  font-family:'Montserrat', sans-serif;
+  font-size:36px;
+  text-align:center;
+  animation:fadeIn 2s ease forwards;
+  opacity:0;
 }
 
+/* ===== CONTAINER ===== */
 .container{
-max-width:900px;
-margin:auto;
-padding:40px;
-line-height:1.7;
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
 }
 
+/* ===== PARAGRAPHS ===== */
+p{
+  margin-bottom:20px;
+  font-size:18px;
+  color:#ddd;
+  opacity:0;
+  transform: translateY(20px);
+  transition:all 0.8s ease;
+}
+
+p.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== IMAGES ===== */
 img{
-width:100%;
-border-radius:10px;
-margin:20px 0;
-transition:0.4s;
+  width:100%;
+  border-radius:10px;
+  margin:20px 0;
+  transition:0.5s;
 }
 
 img:hover{
-transform:scale(1.03);
+  transform:scale(1.05);
+  filter: brightness(1.1);
 }
 
-button{
-background:#4da6ff;
-border:none;
-padding:12px 20px;
-color:white;
-border-radius:8px;
-cursor:pointer;
-transition:0.3s;
+/* ===== BUTTONS ===== */
+button, .btn{
+  background:#4da6ff;
+  border:none;
+  padding:12px 25px;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:20px;
 }
 
-button:hover{
-background:#1b6ed6;
+button:hover, .btn:hover{
+  background:#1b6ed6;
+  transform:translateY(-3px);
 }
 
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+  border-top:1px solid #1e3a5f;
+  margin-top:50px;
+  opacity:0;
+  animation:fadeIn 2s ease forwards;
+}
+
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn{
-from{opacity:0}
-to{opacity:1}
+  to{opacity:1;}
 }
 
+@keyframes slideDown{
+  0%{transform:translateY(-100px); opacity:0;}
+  100%{transform:translateY(0); opacity:1;}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">Deep Search</div>
+  <div class="logo">EL ABISMO</div>
 </header>
 
 <div class="hero">
-<h1>Cocina limpia: avance global histórico</h1>
+  <h1>Cocina limpia: avance global histórico</h1>
 </div>
 
 <div class="container">
+  <p class="animate">Actualmente, el 74% de la población mundial tiene acceso a tecnologías de cocina limpia, lo que representa un avance significativo en comparación con décadas anteriores.</p>
 
-<p>
-Actualmente, el 74% de la población mundial tiene acceso a tecnologías de cocina limpia,
-lo que representa un avance significativo en comparación con décadas anteriores.
-</p>
+  <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea" class="animate">
 
-<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea">
+  <p class="animate">La cocina limpia reduce enfermedades respiratorias causadas por humo tóxico, mejora la calidad de vida y disminuye el impacto ambiental.</p>
 
-<p>
-La cocina limpia reduce enfermedades respiratorias causadas por humo tóxico,
-mejora la calidad de vida y reduce el impacto ambiental.
-</p>
+  <p class="animate">Este progreso forma parte del Objetivo de Desarrollo Sostenible 7, que busca garantizar acceso universal a energía segura y moderna.</p>
 
-<p>
-Este progreso forma parte del Objetivo de Desarrollo Sostenible 7,
-que busca garantizar acceso universal a energía segura y moderna.
-</p>
+  <button onclick="alert('La cocina limpia salva millones de vidas cada año.')">Ver impacto</button>
 
-<button onclick="alert('La cocina limpia salva millones de vidas cada año.')">
-Ver impacto
-</button>
-
+  <a href="noticias.html" class="btn">← Volver a Noticias</a>
 </div>
+
+<footer>
+© 2026 EL ABISMO | Periodismo de investigación energética
+</footer>
+
+<script>
+// ===== SCROLL ANIMATION =====
+const elements = document.querySelectorAll('.animate');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset + window.innerHeight - 50;
+  elements.forEach(el => {
+    if(scrollTop > el.offsetTop){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
+
