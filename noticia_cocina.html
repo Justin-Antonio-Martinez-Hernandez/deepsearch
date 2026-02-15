@@ -3,307 +3,300 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cocina limpia avanza | El Abismo</title>
 
-<title>Cocina limpia: revolución energética | El Abismo</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 <style>
 
-/* ===== ROOT COLORS ===== */
-:root{
---bg:#0a0f1c;
---card:#111a2e;
---accent:#4da6ff;
---text:#ffffff;
-}
-
-.light{
---bg:#f4f8ff;
---card:#ffffff;
---text:#111;
-}
-
-/* ===== BODY ===== */
-body{
+/* ===== RESET ===== */
+*{
 margin:0;
-font-family:Montserrat;
-background:var(--bg);
-color:var(--text);
+padding:0;
+box-sizing:border-box;
+font-family:'Roboto', sans-serif;
+}
+
+body{
+background:linear-gradient(120deg,#0a0f1c,#101f36);
+color:white;
 overflow-x:hidden;
-transition:0.5s;
 }
 
-/* PARTICLES */
-#particles{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-}
-
-/* HEADER */
+/* ===== HEADER ===== */
 header{
-display:flex;
-justify-content:space-between;
 padding:20px 40px;
-background:rgba(0,0,0,0.3);
-backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(12px);
 position:sticky;
 top:0;
 z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .logo{
-font-size:28px;
-color:var(--accent);
+color:#4da6ff;
+font-size:26px;
 font-weight:bold;
+letter-spacing:2px;
 }
 
-.toggle{
-cursor:pointer;
-padding:10px 20px;
-background:var(--accent);
-border-radius:8px;
-}
-
-/* HERO */
+/* ===== HERO PARALLAX ===== */
 .hero{
 height:450px;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
 background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231") center/cover fixed;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
 .hero h1{
 background:rgba(0,0,0,0.6);
-padding:30px;
-border-radius:20px;
+padding:25px 40px;
+border-radius:15px;
+font-family:'Montserrat', sans-serif;
+font-size:40px;
 animation:fadeIn 2s forwards;
 opacity:0;
 }
 
-/* CARD */
-.card{
-max-width:900px;
-margin:40px auto;
-background:var(--card);
-padding:30px;
-border-radius:20px;
-box-shadow:0 0 30px rgba(77,166,255,0.3);
-opacity:0;
-transform:translateY(40px);
-transition:0.6s;
+/* ===== CONTAINER ===== */
+.container{
+max-width:1000px;
+margin:auto;
+padding:60px 20px;
 }
 
-.card.show{
+/* ===== GLASS CARD ===== */
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:20px;
+margin-bottom:40px;
+box-shadow:0 0 30px rgba(0,119,255,0.2);
+transition:0.4s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.glass.show{
 opacity:1;
 transform:translateY(0);
 }
 
-/* IMAGE */
-img{
-width:100%;
-border-radius:15px;
-transition:0.5s;
+.glass:hover{
+transform:translateY(-5px);
 }
 
-img:hover{
-transform:scale(1.05);
+/* ===== PARAGRAPH ===== */
+p{
+color:#ddd;
+font-size:18px;
+line-height:1.7;
+margin-bottom:20px;
 }
 
-/* STATS */
+/* ===== STATS ===== */
 .stats{
 display:flex;
 justify-content:space-around;
 flex-wrap:wrap;
+margin:40px 0;
 }
 
 .stat{
 text-align:center;
+margin:20px;
 }
 
 .stat h2{
 font-size:50px;
-color:var(--accent);
+color:#4da6ff;
 }
 
-/* BUTTON */
-button{
-padding:12px 20px;
-background:var(--accent);
-border:none;
-border-radius:10px;
-cursor:pointer;
+.stat p{
+color:#aaa;
+}
+
+/* ===== IMAGE EFFECT ===== */
+.image-box{
+overflow:hidden;
+border-radius:15px;
+margin:30px 0;
+}
+
+.image-box img{
+width:100%;
+transition:0.6s;
+}
+
+.image-box:hover img{
+transform:scale(1.1);
+}
+
+/* ===== BUTTON ===== */
+.btn{
+background:#4da6ff;
+padding:12px 25px;
+border-radius:8px;
+text-decoration:none;
 color:white;
-font-weight:bold;
+display:inline-block;
+transition:0.3s;
 }
 
-/* CURSOR GLOW */
-.cursor{
-position:fixed;
-width:20px;
-height:20px;
-border-radius:50%;
-background:var(--accent);
-pointer-events:none;
-mix-blend-mode:screen;
+.btn:hover{
+background:#1b6ed6;
+transform:translateY(-3px);
 }
 
-/* FADE */
+/* ===== FOOTER ===== */
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid #1e3a5f;
+color:#777;
+margin-top:60px;
+}
+
+/* ===== ANIMATION ===== */
 @keyframes fadeIn{
 to{opacity:1;}
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div id="particles"></div>
-<div class="cursor"></div>
-
 <header>
-
 <div class="logo">EL ABISMO</div>
-
-<button class="toggle" onclick="toggleMode()">Modo claro / oscuro</button>
-
 </header>
 
 <div class="hero">
-<h1>Cocina limpia: revolución energética mundial</h1>
+<h1>Cocina limpia: revolución energética silenciosa</h1>
 </div>
 
-<div class="card reveal">
+<div class="container">
 
+<div class="glass animate">
 <p>
-Actualmente, el 74% de la población mundial tiene acceso a tecnologías de cocina limpia,
-lo que representa un avance histórico en el acceso energético global.
+El acceso a tecnologías de cocina limpia ha aumentado significativamente en la última década.
+Actualmente, el 74% de la población mundial cuenta con acceso a métodos de cocción seguros y modernos.
 </p>
-
-<img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac">
-
 </div>
-
-<div class="card reveal">
 
 <div class="stats">
-
 <div class="stat">
-<h2 id="n1">0</h2>
-<p>% acceso global</p>
-</div>
-
-<div class="stat">
-<h2 id="n2">0</h2>
-<p>millones beneficiados</p>
+<h2 id="counter1">0</h2>
+<p>Población con acceso (%)</p>
 </div>
 
 <div class="stat">
-<h2 id="n3">0</h2>
-<p>países avanzando</p>
+<h2 id="counter2">0</h2>
+<p>Millones beneficiados</p>
 </div>
 
+<div class="stat">
+<h2 id="counter3">0</h2>
+<p>Países en transición</p>
+</div>
 </div>
 
+<div class="image-box animate">
+<img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac">
 </div>
 
-<div class="card reveal">
-
-<canvas id="chart"></canvas>
-
-</div>
-
-<div class="card reveal">
-
+<div class="glass animate">
 <p>
-La transición energética es clave para el futuro sostenible y el cumplimiento del ODS 7.
+La cocina limpia reduce enfermedades respiratorias, disminuye la deforestación
+y mejora la calidad de vida en comunidades vulnerables.
+</p>
+</div>
+
+<!-- CHART -->
+<div class="glass animate">
+<canvas id="myChart"></canvas>
+</div>
+
+<div class="glass animate">
+<p>
+El crecimiento del acceso a energía limpia está alineado con el Objetivo de Desarrollo
+Sostenible 7, que busca garantizar acceso universal a energía asequible, confiable y sostenible.
 </p>
 
-<button onclick="alert('La energía limpia salva millones de vidas')">
-Ver impacto
-</button>
+<a href="noticias.html" class="btn">← Volver a Noticias</a>
+</div>
 
 </div>
+
+<footer>
+© 2026 EL ABISMO | Investigación energética profunda
+</footer>
 
 <script>
 
-/* PARTICLES */
-tsParticles.load("particles",{
-particles:{
-number:{value:80},
-color:{value:"#4da6ff"},
-links:{enable:true,color:"#4da6ff"},
-move:{enable:true,speed:1}
-}
-});
-
-/* DARK MODE */
-function toggleMode(){
-document.body.classList.toggle("light");
-}
-
-/* REVEAL */
-const reveals=document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll",()=>{
-reveals.forEach(r=>{
-if(r.getBoundingClientRect().top<window.innerHeight-100){
-r.classList.add("show");
+/* SCROLL REVEAL */
+const elements = document.querySelectorAll('.animate');
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
 }
 });
 });
+elements.forEach(el=>observer.observe(el));
 
-/* COUNTER */
-function counter(id,target){
-
-let i=0;
-
+/* COUNTERS */
+function animateCounter(id,target){
+let count=0;
+let speed=target/100;
 let interval=setInterval(()=>{
-
-i++;
-
-document.getElementById(id).innerText=i;
-
-if(i>=target) clearInterval(interval);
-
+count+=speed;
+if(count>=target){
+count=target;
+clearInterval(interval);
+}
+document.getElementById(id).innerText=Math.floor(count);
 },20);
-
 }
 
-counter("n1",74);
-counter("n2",500);
-counter("n3",120);
+animateCounter("counter1",74);
+animateCounter("counter2",500);
+animateCounter("counter3",120);
 
 /* CHART */
-new Chart(document.getElementById("chart"),{
+const ctx = document.getElementById('myChart');
 
-type:"line",
-
-data:{
-labels:["2010","2014","2018","2020","2022","2024"],
-datasets:[{
-data:[55,60,67,70,72,74],
-borderColor:"#4da6ff",
-fill:true
+new Chart(ctx, {
+type: 'line',
+data: {
+labels: ['2010','2012','2014','2016','2018','2020','2022','2024'],
+datasets: [{
+label: 'Acceso a cocina limpia (%)',
+data: [55,58,60,63,67,70,72,74],
+borderColor: '#4da6ff',
+backgroundColor:'rgba(77,166,255,0.2)',
+fill:true,
+tension:0.4
 }]
+},
+options:{
+responsive:true,
+plugins:{
+legend:{labels:{color:'white'}}
+},
+scales:{
+x:{ticks:{color:'white'}},
+y:{ticks:{color:'white'}}
 }
-
-});
-
-/* CURSOR */
-const cursor=document.querySelector(".cursor");
-
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
+}
 });
 
 </script>
