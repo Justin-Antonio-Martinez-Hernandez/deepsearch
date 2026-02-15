@@ -6,197 +6,214 @@
 
 <title>660 millones sin electricidad | El Abismo</title>
 
-<!-- ===== GOOGLE FONTS ===== -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* ===== RESET ===== */
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: 'Roboto', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  background:linear-gradient(180deg,#0a0f1c,#050814);
-  color:white;
-  line-height:1.6;
-  overflow-x:hidden;
+font-family:'Roboto',sans-serif;
+background:linear-gradient(180deg,#050814,#02030a);
+color:white;
+overflow-x:hidden;
 }
 
 /* ===== HEADER ===== */
 header{
-  background:#081427;
-  padding:20px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:2px solid #4da6ff;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  animation: slideDown 1s ease-out;
-}
-
-@keyframes slideDown{
-  0% {transform: translateY(-100px); opacity:0;}
-  100% {transform: translateY(0); opacity:1;}
+background:rgba(5,10,30,0.95);
+backdrop-filter:blur(10px);
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:2px solid #ffd000;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
-  font-size:28px;
-  font-weight:bold;
-  color:#4da6ff;
-  letter-spacing:2px;
+font-family:'Orbitron',sans-serif;
+font-size:28px;
+color:#ffd000;
+letter-spacing:3px;
+text-shadow:0 0 10px #ffd000;
 }
 
 nav a{
-  color:white;
-  margin-left:20px;
-  text-decoration:none;
-  transition:0.3s;
+color:white;
+margin-left:25px;
+text-decoration:none;
+position:relative;
 }
 
-nav a:hover{
-  color:#4da6ff;
-  transform: scale(1.1);
+nav a::after{
+content:'';
+position:absolute;
+width:0;
+height:2px;
+background:#ffd000;
+left:0;
+bottom:-5px;
+transition:0.3s;
 }
 
-/* ===== HERO IMAGE ===== */
+nav a:hover::after{
+width:100%;
+}
+
+/* ===== HERO ===== */
 .hero{
-  width:100%;
-  height:450px;
-  background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231") center/cover no-repeat;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  padding:40px;
-  position:relative;
-  overflow:hidden;
+height:500px;
+background:url("https://images.unsplash.com/photo-1473341304170-971dccb5ac1e") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
 }
 
 .hero h1{
-  font-family: 'Montserrat', sans-serif;
-  font-size:42px;
-  background:rgba(0,0,0,0.6);
-  padding:20px;
-  border-radius:10px;
-  text-align:center;
-  animation: fadeIn 2s ease forwards;
-  opacity:0;
-}
-
-@keyframes fadeIn{
-  to{opacity:1;}
+position:relative;
+font-family:'Orbitron';
+font-size:45px;
+text-align:center;
+color:#ffd000;
+text-shadow:0 0 20px #ffd000;
+animation:fadeIn 2s ease;
 }
 
 /* ===== CONTAINER ===== */
 .container{
-  max-width:900px;
-  margin:auto;
-  padding:40px 20px;
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
 }
 
-/* ===== DATE ===== */
-.date{
-  color:#4da6ff;
-  margin-bottom:20px;
-  font-size:16px;
-  font-weight:500;
-  animation:fadeUp 1s ease forwards;
-  opacity:0;
-}
-
-@keyframes fadeUp{
-  0%{opacity:0; transform: translateY(20px);}
-  100%{opacity:1; transform: translateY(0);}
-}
-
-/* ===== PARAGRAPH ===== */
+/* ===== TEXT ===== */
 p{
-  margin-bottom:20px;
-  font-size:18px;
-  color:#ddd;
-  animation:fadeUp 1s ease forwards;
+font-size:18px;
+color:#ccc;
+margin-bottom:20px;
 }
 
-/* ===== IMAGE INSIDE ===== */
+/* ===== IMAGES ===== */
 .content-img{
-  width:100%;
-  border-radius:10px;
-  margin:30px 0;
-  transition: transform 0.5s;
+width:100%;
+border-radius:15px;
+margin:30px 0;
+transition:0.5s;
+cursor:pointer;
 }
 
 .content-img:hover{
-  transform: scale(1.05);
-  filter: brightness(1.1);
+transform:scale(1.05);
+box-shadow:0 0 30px #ffd000;
 }
 
-/* ===== HIGHLIGHT BOX ===== */
-.highlight{
-  background:#111a2e;
-  padding:20px;
-  border-left:5px solid #4da6ff;
-  margin:30px 0;
-  font-size:20px;
-  animation:highlightFade 1s ease forwards;
-  opacity:0;
+/* ===== INFO BOX ===== */
+.info-box{
+background:rgba(255,208,0,0.08);
+border-left:5px solid #ffd000;
+padding:20px;
+margin:30px 0;
+border-radius:10px;
 }
 
-@keyframes highlightFade{
-  to{opacity:1;}
+/* ===== BUTTON BACK NASA STYLE ===== */
+.back-btn{
+display:inline-block;
+margin-top:40px;
+padding:15px 30px;
+background:linear-gradient(45deg,#ffd000,#ffae00);
+color:black;
+font-weight:bold;
+text-decoration:none;
+border-radius:30px;
+transition:0.4s;
+box-shadow:0 0 15px #ffd000;
+position:relative;
+overflow:hidden;
 }
 
-/* ===== BUTTON ===== */
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  background:#4da6ff;
-  color:white;
-  padding:12px 25px;
-  text-decoration:none;
-  border-radius:8px;
-  transition:0.3s;
+.back-btn::before{
+content:'';
+position:absolute;
+width:0;
+height:100%;
+background:white;
+left:0;
+top:0;
+opacity:0.2;
+transition:0.4s;
 }
 
-.btn:hover{
-  background:#3399ff;
-  transform: translateY(-3px);
+.back-btn:hover::before{
+width:100%;
+}
+
+.back-btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 40px #ffd000;
+}
+
+/* ===== GRAPH ===== */
+.graph-container{
+margin-top:50px;
+background:#0b132b;
+padding:20px;
+border-radius:15px;
+}
+
+canvas{
+width:100%;
+}
+
+/* ===== IMAGE MODAL ===== */
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.modal img{
+max-width:90%;
+max-height:90%;
+border-radius:15px;
+box-shadow:0 0 40px #ffd000;
 }
 
 /* ===== FOOTER ===== */
 footer{
-  text-align:center;
-  padding:30px;
-  color:#777;
-  border-top:1px solid #1e3a5f;
-  margin-top:50px;
-  animation:fadeIn 2s ease forwards;
+text-align:center;
+padding:30px;
+margin-top:50px;
+color:#777;
 }
 
-/* ===== INFO BOXES ===== */
-.info-box{
-  background:#111a2e;
-  padding:20px;
-  border-radius:10px;
-  margin:30px 0;
-  border-left:5px solid #ff7f50;
-  animation:fadeUp 1s ease forwards;
-}
-
-/* ===== SCROLL ANIM ===== */
-[data-animate]{
-  opacity:0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-[data-animate].show{
-  opacity:1;
-  transform: translateY(0);
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
 }
 
 </style>
@@ -205,80 +222,141 @@ footer{
 <body>
 
 <header>
-  <div class="logo">EL ABISMO</div>
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="noticias.html">Noticias</a>
-  </nav>
+
+<div class="logo">EL ABISMO</div>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="noticias.html">Noticias</a>
+</nav>
+
 </header>
 
 <section class="hero">
-  <h1>660 millones de personas aún viven sin electricidad</h1>
+<h1>660 MILLONES SIN ELECTRICIDAD</h1>
 </section>
 
 <div class="container">
 
-<div class="date" data-animate>Publicado: ONU, Informe ODS 2025</div>
-
-<p data-animate>
-El acceso a la electricidad es un derecho fundamental para el desarrollo humano. Más de <b>660 millones de personas en el mundo aún viven sin electricidad</b>, según el Informe ODS 2025 de la ONU.
+<p>
+Más de <b>660 millones de personas</b> viven sin acceso a electricidad. Esto afecta la educación, la salud, la economía y el desarrollo global.
 </p>
 
-<p data-animate>
-La falta de energía afecta directamente la educación, la salud y la economía de millones de familias, especialmente en comunidades rurales y países en desarrollo.
-</p>
+<img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" class="content-img">
 
-<img class="content-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e" data-animate>
-
-<p data-animate>
-En 2010, solo el 84% de la población mundial tenía acceso a electricidad. En 2023, esa cifra aumentó al 92%, pero el progreso sigue siendo desigual. África subsahariana y zonas rurales aisladas concentran la mayoría de personas sin electricidad.
-</p>
-
-<div class="highlight" data-animate>
-El Objetivo de Desarrollo Sostenible 7 busca garantizar energía asequible, sostenible y moderna para todos antes de 2030.
+<div class="info-box">
+⚡ La electricidad permite hospitales funcionales, educación digital, internet y desarrollo económico.
 </div>
 
-<p data-animate>
-Las energías renovables, como la solar y eólica, permiten llevar electricidad a zonas remotas de forma más económica y sostenible.
+<p>
+Las energías renovables como la solar están ayudando a resolver esta crisis energética mundial.
 </p>
 
-<img class="content-img" src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1" data-animate>
+<img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1" class="content-img">
 
-<div class="info-box" data-animate>
-📊 Según la Agencia Internacional de Energía (IEA), más de 1.2 mil millones de personas dependen de combustibles contaminantes para cocinar y calentar sus hogares.
-</div>
+<!-- ===== GRAPH ===== -->
 
-<p data-animate>
-Expertos señalan que acelerar la transición hacia energías limpias es fundamental para cerrar la brecha energética y combatir el cambio climático.
-</p>
+<div class="graph-container">
 
-<p data-animate>
-Garantizar acceso universal a electricidad no solo mejora la calidad de vida, sino que también impulsa el desarrollo económico y social a nivel global.
-</p>
+<h2 style="color:#ffd000;">Acceso a electricidad mundial (%)</h2>
 
-<a href="noticias.html" class="btn" data-animate>← Volver a Noticias</a>
+<canvas id="graph"></canvas>
 
 </div>
 
-<footer data-animate>
-© 2026 EL ABISMO | Periodismo de investigación energética
+<!-- ===== BACK BUTTON PRO ===== -->
+
+<a href="noticias.html" class="back-btn">
+⬅ REGRESAR A NOTICIAS
+</a>
+
+</div>
+
+<!-- ===== MODAL IMAGE ===== -->
+
+<div class="modal" id="modal">
+<img id="modalImg">
+</div>
+
+<footer>
+
+© 2026 EL ABISMO | Sistema energético global
+
 </footer>
 
-<script>
-// ===== SCROLL ANIMATION =====
-const elements = document.querySelectorAll('[data-animate]');
-window.addEventListener('scroll', () => {
-  const scrollTop = window.pageYOffset + window.innerHeight - 50;
-  elements.forEach(el => {
-    if(scrollTop > el.offsetTop){
-      el.classList.add('show');
-    }
-  });
-});
-</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-</body>
-</html>
+<script>
+
+/* ===== GRAPH ===== */
+
+const ctx = document.getElementById('graph');
+
+new Chart(ctx, {
+type: 'line',
+
+data: {
+
+labels: ['2000','2005','2010','2015','2020','2023'],
+
+datasets: [{
+
+label:'Acceso mundial',
+
+data:[78,82,84,88,90,92],
+
+borderColor:'#ffd000',
+
+backgroundColor:'rgba(255,208,0,0.2)',
+
+borderWidth:3,
+
+tension:0.4
+
+}]
+
+},
+
+options:{
+
+animation:{
+duration:3000
+},
+
+scales:{
+y:{
+min:70,
+max:100
+}
+}
+
+}
+
+});
+
+
+/* ===== IMAGE CLICK ZOOM ===== */
+
+const images=document.querySelectorAll('.content-img');
+
+const modal=document.getElementById('modal');
+
+const modalImg=document.getElementById('modalImg');
+
+images.forEach(img=>{
+
+img.onclick=()=>{
+modal.style.display="flex";
+modalImg.src=img.src;
+}
+
+});
+
+modal.onclick=()=>{
+modal.style.display="none";
+}
+
+</script>
 
 </body>
 </html>
