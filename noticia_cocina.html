@@ -2,40 +2,120 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Cocina limpia</title>
+<title>Cocina limpia avanza | Deep Search</title>
 
 <style>
+
 body{
-background:#0a0f1c;
-color:white;
+margin:0;
 font-family:Segoe UI;
+background:linear-gradient(120deg,#0a0f1c,#13203a);
+color:white;
+}
+
+header{
+padding:20px;
+background:#00000055;
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+}
+
+.logo{
+color:#4da6ff;
+font-size:26px;
+font-weight:bold;
+}
+
+.hero{
+height:400px;
+background:url("https://images.unsplash.com/photo-1581578731548-c64695cc6952") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.hero h1{
+background:#000000aa;
+padding:20px;
+border-radius:10px;
+animation:fadeIn 2s;
+}
+
+.container{
 max-width:900px;
 margin:auto;
 padding:40px;
+line-height:1.7;
 }
+
 img{
 width:100%;
 border-radius:10px;
 margin:20px 0;
+transition:0.4s;
 }
-</style>
 
+img:hover{
+transform:scale(1.03);
+}
+
+button{
+background:#4da6ff;
+border:none;
+padding:12px 20px;
+color:white;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#1b6ed6;
+}
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>74% de la población mundial tiene acceso a cocina limpia</h1>
+<header>
+<div class="logo">Deep Search</div>
+</header>
 
-<img src="img/cocina.jpg">
+<div class="hero">
+<h1>Cocina limpia: avance global histórico</h1>
+</div>
+
+<div class="container">
 
 <p>
-El acceso global a tecnologías limpias para cocinar alcanzó el 74% en 2023.
+Actualmente, el 74% de la población mundial tiene acceso a tecnologías de cocina limpia,
+lo que representa un avance significativo en comparación con décadas anteriores.
+</p>
+
+<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea">
+
+<p>
+La cocina limpia reduce enfermedades respiratorias causadas por humo tóxico,
+mejora la calidad de vida y reduce el impacto ambiental.
 </p>
 
 <p>
-Sin embargo, millones aún dependen de combustibles contaminantes, afectando su salud y el medio ambiente.
+Este progreso forma parte del Objetivo de Desarrollo Sostenible 7,
+que busca garantizar acceso universal a energía segura y moderna.
 </p>
 
-<a href="noticias.html">← Volver</a>
+<button onclick="alert('La cocina limpia salva millones de vidas cada año.')">
+Ver impacto
+</button>
+
+</div>
 
 </body>
 </html>
