@@ -1,1 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Quiénes somos | El Abismo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===================== */
+/* VARIABLES */
+/* ===================== */
+
+:root{
+
+--bg:#0a0f1c;
+--bg2:#0f2747;
+--card:#111a2e;
+--accent:#4da6ff;
+--text:#e6ecff;
+--muted:#9aa4c7;
+
+}
+
+/* ===================== */
+/* BASE */
+/* ===================== */
+
+body{
+
+margin:0;
+font-family:Inter;
+background:linear-gradient(180deg,var(--bg),var(--bg2));
+color:var(--text);
+
+}
+
+/* ===================== */
+/* HEADER */
+/* ===================== */
+
+header{
+
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+
+padding:20px 40px;
+
+position:sticky;
+top:0;
+
+}
+
+.logo{
+
+font-family:Montserrat;
+font-weight:900;
+font-size:28px;
+color:var(--accent);
+
+}
+
+/* ===================== */
+/* CONTAINER */
+/* ===================== */
+
+.container{
+
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+
+}
+
+/* ===================== */
+/* HERO */
+/* ===================== */
+
+.hero{
+
+text-align:center;
+margin-bottom:40px;
+
+}
+
+.hero h1{
+
+font-family:Montserrat;
+font-size:48px;
+color:var(--accent);
+
+}
+
+.hero p{
+
+color:var(--muted);
+
+}
+
+/* ===================== */
+/* CARD */
+/* ===================== */
+
+.card{
+
+background:var(--card);
+
+padding:30px;
+
+border-radius:15px;
+
+margin-bottom:25px;
+
+box-shadow:0 0 30px rgba(0,0,0,0.3);
+
+opacity:0;
+transform:translateY(40px);
+
+transition:1s;
+
+}
+
+.card.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+/* ===================== */
+/* TEAM */
+/* ===================== */
+
+.team{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.member{
+
+background:var(--card);
+
+padding:20px;
+
+border-radius:12px;
+
+text-align:center;
+
+transition:0.4s;
+
+}
+
+.member:hover{
+
+transform:translateY(-5px);
+
+}
+
+.member img{
+
+width:100px;
+height:100px;
+
+border-radius:50%;
+
+margin-bottom:10px;
+
+}
+
+.member h3{
+
+margin:5px 0;
+
+}
+
+.role{
+
+color:var(--muted);
+
+font-size:14px;
+
+}
+
+/* ===================== */
+/* STATS */
+/* ===================== */
+
+.stats{
+
+display:flex;
+
+justify-content:space-around;
+
+flex-wrap:wrap;
+
+margin:40px 0;
+
+}
+
+.stat{
+
+text-align:center;
+
+}
+
+.statNumber{
+
+font-size:40px;
+
+color:var(--accent);
+
+font-weight:bold;
+
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+footer{
+
+text-align:center;
+
+padding:30px;
+
+color:var(--muted);
+
+}
+
+/* ===================== */
+/* BUTTON */
+/* ===================== */
+
+.back{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:12px 25px;
+
+background:linear-gradient(45deg,#0077ff,#4da6ff);
+
+border-radius:10px;
+
+text-decoration:none;
+
+color:white;
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+
+EL ABISMO
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>
+Quiénes somos
+</h1>
+
+<p>
+Periodismo de investigación moderno, independiente y transparente.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Nuestra historia</h2>
+
+<p>
+
+El Abismo fue fundado en 2026 como una iniciativa independiente dedicada al periodismo de investigación. Nuestro objetivo es revelar la verdad mediante análisis profundo, verificación rigurosa y transparencia total.
+
+</p>
+
+<p>
+
+Desde nuestro inicio, hemos investigado temas globales relacionados con tecnología, energía, política y ciencia.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Misión</h2>
+
+<p>
+
+Proporcionar información verificada, objetiva y basada en evidencia, permitiendo a la sociedad comprender los eventos más importantes del mundo moderno.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Visión</h2>
+
+<p>
+
+Convertirnos en una plataforma líder global en periodismo de investigación digital.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Valores</h2>
+
+<ul>
+
+<li>Transparencia</li>
+
+<li>Verdad</li>
+
+<li>Independencia</li>
+
+<li>Responsabilidad</li>
+
+<li>Precisión</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Nuestro impacto</h2>
+
+<div class="stats">
+
+<div class="stat">
+
+<div class="statNumber" id="stat1">
+0
+</div>
+
+Investigaciones
+
+</div>
+
+<div class="stat">
+
+<div class="statNumber" id="stat2">
+0
+</div>
+
+Lectores
+
+</div>
+
+<div class="stat">
+
+<div class="statNumber" id="stat3">
+0
+</div>
+
+Países
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Equipo</h2>
+
+<div class="team">
+
+<div class="member">
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+<h3>Daniel Rivera</h3>
+
+<div class="role">
+Director
+</div>
+
+</div>
+
+<div class="member">
+
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+<h3>Ana Torres</h3>
+
+<div class="role">
+Periodista
+</div>
+
+</div>
+
+<div class="member">
+
+<img src="https://randomuser.me/api/portraits/men/65.jpg">
+
+<h3>Carlos Vega</h3>
+
+<div class="role">
+Analista
+</div>
+
+</div>
+
+<div class="member">
+
+<img src="https://randomuser.me/api/portraits/women/68.jpg">
+
+<h3>Laura Méndez</h3>
+
+<div class="role">
+Investigadora
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<a href="index.html" class="back">
+
+← Volver al inicio
+
+</a>
+
+</div>
+
+<footer>
+
+© 2026 El Abismo
+
+</footer>
+
+<script>
+
+/* ===================== */
+/* SCROLL ANIMATION */
+/* ===================== */
+
+const cards=document.querySelectorAll(".card");
+
+window.addEventListener("scroll",()=>{
+
+cards.forEach(card=>{
+
+let top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-50){
+
+card.classList.add("show");
+
+}
+
+});
+
+});
+
+/* ===================== */
+/* STATS COUNTER */
+/* ===================== */
+
+function animate(id,target){
+
+let num=0;
+
+let interval=setInterval(()=>{
+
+num+=Math.ceil(target/100);
+
+if(num>=target){
+
+num=target;
+clearInterval(interval);
+
+}
+
+document.getElementById(id).innerText=num;
+
+},20);
+
+}
+
+animate("stat1",128);
+
+animate("stat2",12000);
+
+animate("stat3",42);
+
+</script>
+
+</body>
+  </html>
