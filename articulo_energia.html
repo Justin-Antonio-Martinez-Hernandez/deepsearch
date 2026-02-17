@@ -6,166 +6,258 @@
 
 <title>Progreso energético global | El Abismo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 <style>
 
-/* VARIABLES */
+/* ================= VARIABLES ================= */
 
 :root{
---bg:#122901;
---card:#1e3d17;
+
+--bg:#081c0f;
+--card:#102616;
 --text:white;
---accent:#b3ff00;
---accent2:#55f790;
+--accent:#7fff00;
+--accent2:#00ffa6;
+--border:rgba(127,255,0,0.2);
+
 }
 
 .light{
---bg:#daffc9;
+
+--bg:#e8ffe0;
 --card:white;
 --text:black;
+
 }
 
-/* BASE */
+/* ================= BASE ================= */
 
 body{
+
 margin:0;
 font-family:Roboto;
 background:var(--bg);
 color:var(--text);
 transition:0.4s;
 overflow-x:hidden;
+
 }
 
 #particles{
+
 position:fixed;
 width:100%;
 height:100%;
 z-index:-1;
+
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
+
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
+padding:15px 20px;
 background:rgba(0,0,0,0.4);
 backdrop-filter:blur(10px);
-border-bottom:1px solid var(--accent);
+border-bottom:1px solid var(--border);
+
 }
 
 .logo{
+
 font-family:Montserrat;
-font-size:28px;
+font-size:26px;
 color:var(--accent);
+
 }
 
 .toggle{
+
 background:linear-gradient(45deg,var(--accent),var(--accent2));
 border:none;
 padding:10px 20px;
 border-radius:10px;
-color:white;
+color:black;
 cursor:pointer;
+font-weight:bold;
+
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
+
 height:400px;
-background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe79TqvzE-AeUlQUzcnMNMWRjuKKS4WJuGww&s") center/cover;
+background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231") center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
+text-align:center;
+padding:20px;
+
 }
 
 .hero h1{
-background:rgba(0,0,0,0.7);
-padding:25px;
+
+background:rgba(0,0,0,0.6);
+padding:20px;
 border-radius:10px;
-animation:fadeIn 2s;
+font-family:Montserrat;
+font-size:36px;
+
 }
 
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(40px);}
-to{opacity:1;}
-}
-
-/* CONTAINER */
+/* ================= CONTAINER ================= */
 
 .container{
-max-width:1000px;
+
+max-width:1100px;
 margin:auto;
-padding:40px 20px;
+padding:20px;
+
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .card{
+
 background:var(--card);
-padding:30px;
+padding:25px;
 border-radius:15px;
-margin-bottom:30px;
-box-shadow:0 0 30px rgba(0,0,0,0.3);
-transition:0.4s;
+margin-bottom:25px;
+border:1px solid var(--border);
 opacity:0;
 transform:translateY(40px);
+transition:0.6s;
+
 }
 
 .card.show{
+
 opacity:1;
 transform:translateY(0);
-}
 
-.card:hover{
-transform:scale(1.02);
 }
 
 .card img{
+
 width:100%;
-border-radius:12px;
-margin-top:20px;
-transition:0.4s;
-cursor:pointer;
+border-radius:10px;
+margin-top:15px;
+
 }
 
-.card img:hover{
-transform:scale(1.05);
+/* ================= GRID ================= */
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+
 }
 
-/* COUNTER */
+/* ================= STAT ================= */
 
-.counter{
-font-size:50px;
+.stat{
+
+text-align:center;
+
+}
+
+.statNumber{
+
+font-size:40px;
 color:var(--accent);
 font-weight:bold;
+
 }
 
-/* BUTTON FLOAT */
+/* ================= BAR ================= */
 
-.float-btn{
+.progress{
+
+width:100%;
+height:30px;
+background:#1a1a1a;
+border-radius:20px;
+overflow:hidden;
+
+}
+
+.progressFill{
+
+height:100%;
+width:0%;
+background:linear-gradient(90deg,var(--accent),var(--accent2));
+transition:2s;
+
+}
+
+/* ================= VIDEO ================= */
+
+.video{
+
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+
+}
+
+.video iframe{
+
+position:absolute;
+width:100%;
+height:100%;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+text-align:center;
+padding:30px;
+border-top:1px solid var(--border);
+
+}
+
+/* ================= FLOAT ================= */
+
+.float{
+
 position:fixed;
 bottom:20px;
 left:20px;
-background:linear-gradient(45deg,var(--accent),var(--accent2));
-padding:15px 20px;
-border-radius:12px;
-color:white;
+background:var(--accent);
+padding:15px;
+border-radius:10px;
 text-decoration:none;
-box-shadow:0 0 20px rgba(0,0,0,0.4);
+color:black;
+font-weight:bold;
+
 }
 
-/* FOOTER */
+/* ================= MOBILE ================= */
 
-footer{
-text-align:center;
-padding:30px;
-border-top:1px solid var(--accent);
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:24px;
+
+}
+
 }
 
 </style>
@@ -178,38 +270,104 @@ border-top:1px solid var(--accent);
 
 <div class="logo">EL ABISMO</div>
 
-<button class="toggle" onclick="toggleMode()">Modo claro / oscuro</button>
+<button class="toggle" onclick="toggleMode()">
+Modo claro / oscuro
+</button>
 
 </header>
 
 <section class="hero">
 
-<h1>Progreso global en energía limpia</h1>
+<h1>
+El crecimiento global de la energía limpia transforma el planeta
+</h1>
 
 </section>
 
 <div class="container">
 
+
+<!-- INTRO -->
+
 <div class="card">
 
-<h2>Capacidad renovable instalada</h2>
-
-<div class="counter" id="counter">0</div>
+<h2>🌎 Panorama global</h2>
 
 <p>
 
-La capacidad renovable mundial ha crecido masivamente, liderada por la energía solar y eólica.
+La energía renovable ha experimentado un crecimiento sin precedentes en los últimos 15 años.  
+Actualmente, más del <b>35% de la electricidad mundial</b> proviene de fuentes limpias como:
 
 </p>
 
-<img src="https://luxun.mx/hubfs/Capacidad%20Instalada.jpg">
+<ul>
+
+<li>Energía solar ☀️</li>
+<li>Energía eólica 🌬️</li>
+<li>Energía hidroeléctrica 💧</li>
+<li>Energía geotérmica 🌋</li>
+
+</ul>
+
+<img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7">
 
 </div>
 
 
+<!-- STATS -->
+
 <div class="card">
 
-<h2>Crecimiento de energías renovables</h2>
+<h2>📊 Estadísticas globales</h2>
+
+<div class="grid">
+
+<div class="stat">
+<div class="statNumber" id="stat1">0</div>
+GW instalados
+</div>
+
+<div class="stat">
+<div class="statNumber" id="stat2">0</div>
+Países usando renovables
+</div>
+
+<div class="stat">
+<div class="statNumber" id="stat3">0</div>
+Millones de hogares
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROGRESS -->
+
+<div class="card">
+
+<h2>📈 Progreso hacia el objetivo 2050</h2>
+
+<p>
+
+Objetivo global: 100% energía limpia
+
+</p>
+
+<div class="progress">
+<div class="progressFill" id="progressFill"></div>
+</div>
+
+<p id="progressText">0%</p>
+
+</div>
+
+
+<!-- CHART -->
+
+<div class="card">
+
+<h2>📉 Crecimiento histórico</h2>
 
 <canvas id="chart1"></canvas>
 
@@ -218,36 +376,84 @@ La capacidad renovable mundial ha crecido masivamente, liderada por la energía 
 
 <div class="card">
 
-<h2>Distribución energética mundial</h2>
+<h2>🌍 Distribución energética</h2>
 
 <canvas id="chart2"></canvas>
 
 </div>
 
 
+<!-- TIMELINE -->
+
 <div class="card">
 
-<h2>Impacto ambiental positivo</h2>
+<h2>🕒 Línea del tiempo</h2>
 
-<p>
+<ul>
 
-Las energías limpias reducen emisiones, mejoran salud pública y protegen el planeta.
+<li>2000 — inicio expansión solar</li>
+<li>2010 — energía solar accesible</li>
+<li>2020 — adopción masiva global</li>
+<li>2030 — transición energética acelerada</li>
+<li>2050 — objetivo neutralidad carbono</li>
 
-</p>
+</ul>
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB_YQ_PuE8eJ3rw8CgrrECyP6tiH_LLQ7ArA&s">
+</div>
+
+
+<!-- IMPACT -->
+
+<div class="card">
+
+<h2>🌱 Impacto ambiental</h2>
+
+<ul>
+
+<li>Reducción del CO₂</li>
+<li>Mejor calidad del aire</li>
+<li>Menos calentamiento global</li>
+<li>Mejor salud pública</li>
+
+</ul>
+
+<img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e">
+
+</div>
+
+
+<!-- VIDEO -->
+
+<div class="card">
+
+<h2>🎥 Explicación visual</h2>
+
+<div class="video">
+
+<iframe src="https://www.youtube.com/embed/1kUE0BZtTRc"
+frameborder="0"
+allowfullscreen>
+</iframe>
 
 </div>
 
 </div>
 
-<a href="noticias.html" class="float-btn">← Noticias</a>
+
+</div>
+
+
+<a href="noticias.html" class="float">
+← Noticias
+</a>
+
 
 <footer>
 
-© 2026 EL ABISMO
+© 2026 EL ABISMO | Periodismo de investigación
 
 </footer>
+
 
 <script>
 
@@ -256,72 +462,107 @@ Las energías limpias reducen emisiones, mejoran salud pública y protegen el pl
 tsParticles.load("particles",{
 
 particles:{
-number:{value:80},
-color:{value:["#a2f765","#55f7a6"]},
-links:{enable:true,color:"#76d941"},
+number:{value:60},
+color:{value:"#7fff00"},
 move:{enable:true,speed:1}
 }
 
 });
 
-/* COUNTER */
 
-let count=0;
-let target=3000;
+/* STATS */
 
-let counter=setInterval(()=>{
+function animateValue(id,target,speed){
 
-count+=10;
+let value=0;
 
-document.getElementById("counter").innerText=count+" GW";
+let interval=setInterval(()=>{
 
-if(count>=target) clearInterval(counter);
+value+=Math.ceil(target/100);
 
-},10);
+if(value>=target){
+
+value=target;
+clearInterval(interval);
+
+}
+
+document.getElementById(id).innerText=value;
+
+},speed);
+
+}
+
+animateValue("stat1",3000,20);
+animateValue("stat2",195,20);
+animateValue("stat3",850,20);
+
+
+/* PROGRESS */
+
+setTimeout(()=>{
+
+document.getElementById("progressFill").style.width="35%";
+document.getElementById("progressText").innerText="35% completado";
+
+},500);
 
 
 /* CHART */
 
-new Chart(document.getElementById("chart1"),{
+new Chart(chart1,{
 
 type:"line",
 
 data:{
-labels:["2010","2015","2020","2025"],
+
+labels:["2000","2005","2010","2015","2020","2025"],
+
 datasets:[{
-label:"Capacidad GW",
-data:[800,1200,2200,3000],
-borderColor:"#53780b"
+
+label:"Capacidad global GW",
+
+data:[200,400,800,1500,2500,3000],
+
+borderColor:"#7fff00"
+
 }]
+
 }
 
 });
 
 
-new Chart(document.getElementById("chart2"),{
+new Chart(chart2,{
 
-type:"pie",
+type:"doughnut",
 
 data:{
+
 labels:["Renovable","Fósil"],
+
 datasets:[{
+
 data:[35,65],
-backgroundColor:["#86912d","#45d16f"]
+
+backgroundColor:["#7fff00","#333"]
+
 }]
+
 }
 
 });
 
 
-/* SCROLL */
+/* SCROLL ANIMATION */
 
-let cards=document.querySelectorAll(".card");
+const cards=document.querySelectorAll(".card");
 
 window.addEventListener("scroll",()=>{
 
 cards.forEach(card=>{
 
-if(card.getBoundingClientRect().top < window.innerHeight-50){
+if(card.getBoundingClientRect().top<window.innerHeight-50){
 
 card.classList.add("show");
 
