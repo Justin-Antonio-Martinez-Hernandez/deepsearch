@@ -3,17 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El Abismo | Periodismo de investigación</title>
-<link rel="icon" type="image/png" href="logo.png">
 
+<title>El Abismo | Periodismo de investigación</title>
+
+<link rel="icon" type="image/png" href="logo.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* ========================= */
-/* VARIABLES */
-/* ========================= */
 
 :root{
 --bg:#0a0f1c;
@@ -24,10 +21,6 @@
 --border:rgba(77,166,255,0.25);
 }
 
-/* ========================= */
-/* RESET */
-/* ========================= */
-
 *{
 margin:0;
 padding:0;
@@ -35,16 +28,14 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Inter, sans-serif;
+font-family:Inter,sans-serif;
 background:radial-gradient(circle at center,#0f2747,#0a0f1c);
 color:white;
 overflow-x:hidden;
 cursor:none;
 }
 
-/* ========================= */
 /* CURSOR */
-/* ========================= */
 
 #cursor{
 position:fixed;
@@ -56,36 +47,7 @@ pointer-events:none;
 z-index:9999;
 }
 
-/* ========================= */
-/* PARTICLES */
-/* ========================= */
-
-#particles{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-4;
-}
-
-/* ========================= */
-/* WAVES */
-/* ========================= */
-
-#wave1,#wave2,#wave3{
-position:fixed;
-bottom:0;
-width:100%;
-height:300px;
-z-index:-3;
-}
-
-#wave1{opacity:0.4;}
-#wave2{opacity:0.25;}
-#wave3{opacity:0.15;}
-
-/* ========================= */
 /* INTRO */
-/* ========================= */
 
 #intro{
 position:fixed;
@@ -99,21 +61,6 @@ flex-direction:column;
 z-index:999;
 }
 
-#introWater{
-position:absolute;
-bottom:-100%;
-width:100%;
-height:200%;
-background:linear-gradient(to top,rgba(0,119,255,0.9),rgba(77,166,255,0.4),transparent);
-animation:introWater 4s forwards;
-}
-
-@keyframes introWater{
-0%{bottom:-100%;}
-60%{bottom:0;}
-100%{bottom:-20%;}
-}
-
 #logo{
 font-family:Montserrat;
 font-size:80px;
@@ -121,7 +68,6 @@ font-weight:900;
 color:var(--accent);
 text-shadow:0 0 40px var(--accent);
 animation:glow 2s infinite alternate;
-z-index:2;
 }
 
 @keyframes glow{
@@ -140,17 +86,13 @@ animation:fadeIn 3s forwards 1s;
 to{opacity:1;}
 }
 
-/* ========================= */
 /* MAIN */
-/* ========================= */
 
 #main{
 display:none;
 }
 
-/* ========================= */
 /* HEADER */
-/* ========================= */
 
 header{
 position:sticky;
@@ -162,7 +104,6 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 border-bottom:1px solid var(--border);
-z-index:100;
 }
 
 .logoHeader{
@@ -178,24 +119,11 @@ color:white;
 position:relative;
 }
 
-nav a::after{
-content:"";
-position:absolute;
-width:0;
-height:2px;
-background:var(--accent);
-left:0;
-bottom:-5px;
-transition:0.3s;
+nav a:hover{
+color:var(--accent);
 }
 
-nav a:hover::after{
-width:100%;
-}
-
-/* ========================= */
 /* HERO */
-/* ========================= */
 
 .hero{
 padding:140px 20px;
@@ -226,41 +154,9 @@ border-radius:12px;
 color:white;
 font-size:18px;
 cursor:pointer;
-transition:0.3s;
 }
 
-.hero button:hover{
-transform:scale(1.1);
-}
-
-/* ========================= */
-/* STATS */
-/* ========================= */
-
-.stats{
-display:flex;
-justify-content:center;
-gap:60px;
-padding:80px 20px;
-}
-
-.stat{
-text-align:center;
-}
-
-.statNumber{
-font-size:48px;
-color:var(--accent);
-font-family:Montserrat;
-}
-
-.statLabel{
-color:#aaa;
-}
-
-/* ========================= */
 /* CARDS */
-/* ========================= */
 
 .cards{
 display:grid;
@@ -271,104 +167,22 @@ padding:60px;
 
 .card{
 background:var(--glass);
-backdrop-filter:blur(20px);
 padding:25px;
 border-radius:15px;
 border:1px solid var(--border);
-transition:0.4s;
+transition:0.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
 }
 
-/* ========================= */
 /* FOOTER */
-/* ========================= */
 
 footer{
 padding:30px;
 text-align:center;
 color:#777;
-}
-
-/* ========================= */
-/* MOBILE FIX */
-/* ========================= */
-
-@media (max-width:768px){
-
-body{
-cursor:auto;
-}
-
-#cursor{
-display:none;
-}
-
-header{
-padding:15px 20px;
-flex-direction:column;
-gap:10px;
-}
-
-.logoHeader{
-font-size:22px;
-}
-
-nav{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-nav a{
-margin:8px 12px;
-font-size:14px;
-}
-
-.hero{
-padding:100px 20px;
-}
-
-.hero h1{
-font-size:32px;
-}
-
-.hero p{
-font-size:15px;
-}
-
-.hero button{
-font-size:16px;
-padding:12px 24px;
-}
-
-.stats{
-flex-direction:column;
-gap:30px;
-padding:50px 20px;
-}
-
-.statNumber{
-font-size:36px;
-}
-
-.cards{
-padding:30px 20px;
-grid-template-columns:1fr;
-}
-
-#logo{
-font-size:42px;
-}
-
-#slogan{
-font-size:16px;
-text-align:center;
-padding:0 20px;
-}
-
 }
 
 </style>
@@ -377,13 +191,8 @@ padding:0 20px;
 <body>
 
 <div id="cursor"></div>
-<canvas id="particles"></canvas>
-<canvas id="wave1"></canvas>
-<canvas id="wave2"></canvas>
-<canvas id="wave3"></canvas>
 
 <div id="intro">
-<div id="introWater"></div>
 <div id="logo">EL ABISMO</div>
 <div id="slogan">Buscamos profundamente para revelar la verdad</div>
 </div>
@@ -391,52 +200,91 @@ padding:0 20px;
 <div id="main">
 
 <header>
-<div class="logoHeader">EL ABISMO</div>
+
+<div class="logoHeader">
+EL ABISMO
+</div>
+
 <nav>
+
 <a href="index.html">Inicio</a>
-<a href="noticias.html">Noticias</a>
+
+<a href="articulo_energia.html">Artículo Energía</a>
+
+<a href="quienes_somos.html">Quiénes Somos</a>
+
 <a href="contacto.html">Contacto</a>
+
 </nav>
+
 </header>
 
 <section class="hero">
-<h1>Periodismo que revela la verdad</h1>
-<p>Investigación profunda basada en evidencia, datos y análisis profesional.</p>
-<button onclick="location.href='noticias.html'">Explorar noticias</button>
-</section>
 
-<section class="stats">
-<div class="stat">
-<div class="statNumber" id="stat1">0</div>
-<div class="statLabel">Investigaciones</div>
-</div>
-<div class="stat">
-<div class="statNumber" id="stat2">0</div>
-<div class="statLabel">Fuentes verificadas</div>
-</div>
-<div class="stat">
-<div class="statNumber" id="stat3">0</div>
-<div class="statLabel">Lectores</div>
-</div>
+<h1>
+Periodismo que revela la verdad
+</h1>
+
+<p>
+Investigación profunda basada en evidencia, datos y análisis profesional.
+</p>
+
+<button onclick="location.href='articulo_energia.html'">
+Leer artículo destacado
+</button>
+
 </section>
 
 <section class="cards">
+
 <div class="card">
-<h3>Investigación profunda</h3>
-<p>Análisis avanzado.</p>
+
+<h3>Artículo Destacado</h3>
+
+<p>
+Lee nuestra investigación sobre el crecimiento global de la energía limpia.
+</p>
+
+<br>
+
+<button onclick="location.href='articulo_energia.html'">
+Abrir artículo
+</button>
+
 </div>
+
 <div class="card">
-<h3>Fuentes reales</h3>
-<p>Información verificada.</p>
+
+<h3>Quiénes Somos</h3>
+
+<p>
+Conoce el equipo detrás de El Abismo y nuestra misión periodística.
+</p>
+
+<br>
+
+<button onclick="location.href='quienes_somos.html'">
+Ver equipo
+</button>
+
 </div>
+
 <div class="card">
-<h3>Transparencia</h3>
-<p>Datos comprobables.</p>
+
+<h3>Investigaciones</h3>
+
+<p>
+Explora nuestras investigaciones actuales y proyectos futuros.
+</p>
+
 </div>
+
 </section>
 
 <footer>
+
 © 2026 El Abismo
+
 </footer>
 
 </div>
@@ -444,94 +292,25 @@ padding:0 20px;
 <script>
 
 /* INTRO */
+
 setTimeout(()=>{
+
 intro.style.display="none";
 main.style.display="block";
+
 },4000);
 
+
 /* CURSOR */
+
 document.addEventListener("mousemove",e=>{
+
 cursor.style.left=e.clientX+"px";
 cursor.style.top=e.clientY+"px";
+
 });
-
-/* PARTICLES */
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-
-function resizeCanvas(){
-canvas.width=innerWidth;
-canvas.height=innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize",resizeCanvas);
-
-let particles=[];
-for(let i=0;i<80;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-speed:Math.random()*0.5
-});
-}
-
-function animateParticles(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="#4da6ff";
-particles.forEach(p=>{
-p.y+=p.speed;
-if(p.y>canvas.height)p.y=0;
-ctx.fillRect(p.x,p.y,2,2);
-});
-requestAnimationFrame(animateParticles);
-}
-animateParticles();
-
-/* WAVES */
-function createWave(canvasId,speed,amp){
-const canvas=document.getElementById(canvasId);
-const ctx=canvas.getContext("2d");
-canvas.width=innerWidth;
-canvas.height=300;
-let offset=0;
-
-function animate(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.beginPath();
-for(let x=0;x<canvas.width;x++){
-let y=Math.sin((x+offset)*0.01)*amp+150+scrollY*0.2;
-ctx.lineTo(x,y);
-}
-ctx.lineTo(canvas.width,300);
-ctx.lineTo(0,300);
-ctx.fillStyle="rgba(77,166,255,0.3)";
-ctx.fill();
-offset+=speed;
-requestAnimationFrame(animate);
-}
-animate();
-}
-createWave("wave1",2,20);
-createWave("wave2",1.5,30);
-createWave("wave3",1,40);
-
-/* STATS */
-function animateStat(id,target){
-let num=0;
-let interval=setInterval(()=>{
-num+=Math.ceil(target/100);
-if(num>=target){
-num=target;
-clearInterval(interval);
-}
-document.getElementById(id).innerText=num;
-},20);
-}
-animateStat("stat1",128);
-animateStat("stat2",342);
-animateStat("stat3",2);
 
 </script>
 
 </body>
-</html>
+  </html>
